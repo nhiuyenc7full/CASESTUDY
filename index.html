@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Game hứng sao</title>
 
     <style>
       img {
         display: none;
+      }
+      body {
+        background-image: url("earth.png");
+        background-size: cover;
       }
     </style>
   </head>
@@ -17,7 +21,9 @@
       id="myCanvas"
       width="400px"
       height="600px"
-      style="border: 3px solid black; background-image: url(star.jpg)"
+      style="border: 3px solid blue; position: absolute; left: 500px; top: 10px"
+
+
     >
     </canvas>
     <img id="1" src="star1.png"/>
@@ -28,8 +34,6 @@
     <img id="6" src="star6.png" />
     <img id="7" src="boom.png" />
     <img id="basket" src="basket.png" />
-    <p id = "result"></p>
-    <p id = "result1"></p>
     <script defer src="Basket.js"></script>
     <script src="Drop.js"></script>
     <script defer src="index.js"></script>

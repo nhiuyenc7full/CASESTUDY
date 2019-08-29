@@ -131,8 +131,7 @@ const performAnimation = () => {
        basket.draw(ctx);
    };
 
-    if (score === 20) drop.speed = 10;
-    if (score === 40) drop.speed = 5;
+    if (score === 10) drop.speed = 10;
 
     if (life === 0) {
       cancelAnimationFrame(myReq);
