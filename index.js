@@ -108,13 +108,13 @@ const performAnimation = () => {
     };
 
 
-    if ((id === 7) && 
+    if ((id >= 7) && 
     (drop.y === basket.y) && 
     (drop.x + drop.width >= basket.x) && 
     (drop.x) <= (basket.x + basket.width)) {
       life--;
     }
-    if ((id === 7) && 
+    if ((id >= 7) && 
     (drop.y > basket.y) && 
     (drop.x + drop.width >= basket.x) && 
     (drop.x) <= (basket.x + basket.width)) {
@@ -124,15 +124,18 @@ const performAnimation = () => {
     };
 
 
-    if (((id === 7) && (drop.y >= basket.y) && (drop.x + drop.width < basket.x)) ||
-    ((id === 7) && (drop.y >= basket.y) && (drop.x) > (basket.x + basket.width))) {
+    if (((id >= 7) && (drop.y >= basket.y) && (drop.x + drop.width < basket.x)) ||
+    ((id >= 7) && (drop.y >= basket.y) && (drop.x) > (basket.x + basket.width))) {
      ctx.clearRect(0, 0, SCREAN_CANVAS.SCREAN_WIDTH, SCREAN_CANVAS.SCREAN_HEIGHT);
        ctx.fillText("Good!", drop.x, basket.y);
        basket.draw(ctx);
    };
 
-    if (score === 20) drop.speed = 10;
-    if (score === 40) drop.speed = 5;
+  if (score < 12 && score%11 === 10) drop.speed = 10;
+  if (score < 22 && score%21 === 20) drop.speed = 5;
+  if (score < 27 && score%26 === 25) drop.speed = 10;
+  if (score > 27 && score <= 60) drop.speed = 10;
+  if (score > 80) drop.speed = 15;
 
     if (life === 0) {
       cancelAnimationFrame(myReq);
